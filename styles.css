@@ -15,8 +15,11 @@ body {
   padding-bottom: 50px;
   padding-top: 10px;
 }
-.current-temperature {
+#mainTemperature {
   font-size: 60px;
+}
+#weather-status {
+  font-size: 30px;
 }
 .degree-symbols {
   position: relative;
