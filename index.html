@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App frame</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/81d893ed0b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Type city here"
+              id="city-input"
+            />
+            <div class="col-3">
+              <button type="submit" class="btn btn-primary">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="current-city col-3">
+          <button type="click" class="btn btn-primary" id="current-city">
+            Current City
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="current-information">
+            <h2>Current City</h2>
+            <p>
+              Day, Month Date, Year
+            </p>
+            <div class="row">
+              <div class="col-4">
+                <ul class="current-temperature">
+                  <li id="mainTemperature">XX</li>
+                  <li id="weather-status">Sunny</li>
+                </ul>
+              </div>
+              <div class="degree-symbols col-2 c-degree">
+                °C
+              </div>
+              <div class="degree-symbols col-2 f-degree">
+                °F
+              </div>
+              <div class="col-4">
+                <i class="fas fa-sun"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="measurements col-6">
+          💧rain: xx% <br />
+          🌬wind: Xkm/h <br />
+          🌡💦humidity: xx%
+        </div>
+      </div>
+      <div class="five-day">
+        <div class="row">
+          <div class="col-3">
+            Mon <br />
+            ☀️<br />
+            28 21
+          </div>
+          <div class="middle-days col-2">
+            Tues <br />
+            ☁️ <br />
+            28 21
+          </div>
+          <div class="middle-days col-2">
+            Weds <br />
+            ⛅️<br />
+            28 21
+          </div>
+          <div class="middle-days col-2">
+            Thurs <br />
+            ⚡️<br />
+            28 21
+          </div>
+          <div class="col-3">
+            Fri <br />
+            ☀️<br />
+            28 21
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
