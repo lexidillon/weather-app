@@ -21,6 +21,7 @@ body {
 }
 #weather-status {
   font-size: 15px;
+  text-transform: capitalize;
 }
 .degree-symbols {
   position: relative;
