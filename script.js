@@ -93,8 +93,16 @@ function showPosition(position) {
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let cityName = response.data.name;
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${cityName}`;
+  if (cityName.value.length) {
+    let h2 = document.querySelector("h2");
+    h2.innerHTML =
+      cityName.value
+        .trim()
+        .charAt(0)
+        .toUpperCase() + cityInput.value.trim().slice(1);
+  }
+  // let h2 = document.querySelector("h2");
+  // h2.innerHTML = `${cityName}`;
   let mainTemperature = document.querySelector("#mainTemperature");
   mainTemperature.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-status");
