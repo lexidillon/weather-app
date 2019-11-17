@@ -63,8 +63,8 @@ function searchTemperature(response) {
   let mainTemperature = document.querySelector("#mainTemperature");
   mainTemperature.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-status");
-  let humidityElement = document.querySelector("humidity");
-  let windElement = document.querySelector("wind");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -98,8 +98,8 @@ function showTemperature(response) {
   let mainTemperature = document.querySelector("#mainTemperature");
   mainTemperature.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-status");
-  let humidityElement = document.querySelector("humidity");
-  let windElement = document.querySelector("wind");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
