@@ -4,6 +4,9 @@ let p = document.querySelector("p");
 let date = now.getDate();
 let hours = now.getHours();
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let year = now.getFullYear();
 let month = now.getMonth();
 
