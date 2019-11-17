@@ -20,7 +20,7 @@ body {
   font-size: 60px;
 }
 #weather-status {
-  font-size: 5px;
+  font-size: 15px;
 }
 .degree-symbols {
   position: relative;
