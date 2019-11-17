@@ -146,12 +146,10 @@ function displayCelsius(event) {
 let celsiusTemperature = null;
 
 let form = document.querySelector("#city-input");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", search);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
-
-showTemperature();
