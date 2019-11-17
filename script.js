@@ -123,19 +123,19 @@ currentCity.addEventListener("click", getCurrentWeather);
 
 function displayFahrenheit(event) {
   event.preventDefault();
-  let degreeElement = document.querySelector("#degree-symbols");
+  let temperatureElement = document.querySelector("#mainTemperature");
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  degreeElement.innerHTML = Math.round(fahrenheitTemp);
+  let fahrenheitTemp = celsiusTemperature * 1.8 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function displayCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#degree-symbols");
+  let temperatureElement = document.querySelector("#mainTemperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
