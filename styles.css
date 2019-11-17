@@ -53,3 +53,7 @@ i {
 .f-degree {
   color: blue;
 }
+
+#current-city {
+  text-transform: capitalize;
+}
