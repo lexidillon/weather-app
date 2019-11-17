@@ -67,6 +67,8 @@ function searchTemperature(response) {
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemp = response.data.main.temp;
+
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);

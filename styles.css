@@ -27,6 +27,13 @@ body {
   position: relative;
   margin-right: 0px;
 }
+.degree-symbols .active {
+  color: black;
+  cursor: default;
+}
+.degree-symbols .active:hover {
+  text-decoration: none;
+}
 .current-information {
   margin-left: 20px;
 }
