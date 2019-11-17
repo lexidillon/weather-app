@@ -128,8 +128,6 @@ currentCity.addEventListener("click", getCurrentWeather);
 function displayFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#mainTemperature");
-  let celsiusTemp = response.data.main.temp;
-
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
@@ -154,5 +152,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
-
-showTemperature();
