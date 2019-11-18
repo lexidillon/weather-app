@@ -36,9 +36,11 @@ body {
 }
 .current-information {
   margin-left: 20px;
+  text-transform: capitalize;
 }
 h2 {
   margin-top: 50px;
+  text-transform: capitalize;
 }
 .measurements {
   margin-top: 100px;
@@ -49,4 +51,7 @@ ul {
   list-style: none;
   margin-left: -30px;
   position: relative;
+}
+#city-input {
+  text-transform: capitalize;
 }
