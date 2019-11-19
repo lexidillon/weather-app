@@ -58,8 +58,12 @@ function formatHours(timestamp) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#hourly-forecast");
-  let forecast = response.data.list[0];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML = `
    <div class="col-2">
    <h3>
     ${formatHours(forecast.dt * 1000)}
@@ -74,6 +78,7 @@ function showForecast(response) {
             </div>
           </div>
   `;
+  }
 }
 
 function search(event) {
