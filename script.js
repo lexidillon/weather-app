@@ -44,12 +44,12 @@ let calendarMonth = months[now.getMonth()];
 p.innerHTML = `${day}, ${calendarMonth} ${date}, ${year}, ${hours}:${minutes}`;
 
 function formatHours(timestamp) {
-  let date = now.getDate();
-  let hours = now.getHours();
+  let date = new Date(timestamp);
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = now.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -63,7 +63,7 @@ function showForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML = `
+    forecastElement.innerHTML += `
    <div class="col-2">
    <h3>
     ${formatHours(forecast.dt * 1000)}
