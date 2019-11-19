@@ -57,7 +57,7 @@ function formatHours(timestamp) {
 }
 
 function showForecast(response) {
-  let forecastElement = document.querySelector("#six-hour");
+  let forecastElement = document.querySelector("#hourly-forecast");
   let forecast = response.data.list[0];
   forecastElement.innerHTML = `
    <div class="col-2">
