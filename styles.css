@@ -9,7 +9,7 @@ body {
   padding: 50px;
   max-width: 1000px;
 }
-.six-hour {
+#hourly-forecast {
   text-align: center;
   background: rgba(211, 211, 211, 0.8);
   margin-top: 50px;
