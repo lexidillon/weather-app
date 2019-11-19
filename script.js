@@ -3,6 +3,9 @@ let p = document.querySelector("p");
 
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
@@ -39,6 +42,37 @@ let months = [
 let calendarMonth = months[now.getMonth()];
 
 p.innerHTML = `${day}, ${calendarMonth} ${date}, ${year}, ${hours}:${minutes}`;
+
+function formatHours(timestamp) {
+  let date = now.getDate();
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function showForecast(response) {
+  let forecastElement = document.querySelector("#six-hour");
+  let forecast = response.data.list[0];
+  forecastElement.innerHTML = `
+   <div class="col-2">
+            ${formatHours(forecast.dt * 1000)}
+            <img src="https://openweathermap.org/img/ws/${
+              forecast.weather[0].icon
+            }@2x.png" alt="">
+            <div class="forecast-temperature">
+              <strong>${Math.round(
+                forecast.main.temp_max
+              )}°</strong> ${Math.round(forecast.main.temp_min)}°
+            </div>
+          </div>
+  `;
+}
 
 function search(event) {
   event.preventDefault();
