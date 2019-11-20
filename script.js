@@ -68,7 +68,7 @@ function showForecast(response) {
    <h3>
     ${formatHours(forecast.dt * 1000)}
     </h3>
-            <img src="https://api.openweathermap.org/img/ws/${
+            <img src="https://openweathermap.org/img/ws/${
               forecast.weather[0].icon
             }@2x.png" alt="">
             <div class="forecast-temperature">
@@ -117,7 +117,7 @@ function searchTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
     "src",
-    `https://api.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
@@ -161,7 +161,7 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
     "src",
-    `https://api.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
