@@ -53,6 +53,7 @@ function formatHours(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   return `${hours}:${minutes}`;
 }
 
@@ -63,8 +64,7 @@ function showForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += `
-   <div class="col-2">
+    forecastElement.innerHTML += ` <div class="col-2">
    <h3>
     ${formatHours(forecast.dt * 1000)}
     </h3>
@@ -135,6 +135,7 @@ function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "4744f550ff3726f13bea4b0bd2c169d9";
+  let cityInput = document.querySelector("#city-input");
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
