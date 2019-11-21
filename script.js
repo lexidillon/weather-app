@@ -81,27 +81,29 @@ function showForecast(response) {
   }
 }
 
-function search(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  if (cityInput.value.length) {
-    let h2 = document.querySelector("h2");
-    h2.innerHTML =
-      cityInput.value
-        .trim()
-        .charAt(0)
-        .toUpperCase() + cityInput.value.trim().slice(1);
-  }
+function search(city) {
   let apiKey = "4744f550ff3726f13bea4b0bd2c169d9";
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(searchTemperature);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  if (cityInput.value.length) {
+    let city = cityInput.value.trim();
+
+    search(city);
+  }
+}
+
 function searchTemperature(response) {
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let mainTemperature = document.querySelector("#mainTemperature");
   mainTemperature.innerHTML = `${temperature}`;
@@ -123,7 +125,7 @@ function searchTemperature(response) {
 }
 
 let searchCity = document.querySelector("form");
-searchCity.addEventListener("submit", search);
+searchCity.addEventListener("submit", handleSubmit);
 
 //Current City Button
 function getCurrentWeather(event) {
@@ -189,10 +191,12 @@ function displayCelsius(event) {
 let celsiusTemp = null;
 
 let form = document.querySelector("#city-input");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
+
+search("Virginia Beach");
