@@ -13,8 +13,8 @@ body {
   text-align: center;
   background: rgba(211, 211, 211, 0.8);
   margin-top: 50px;
-  padding-bottom: 50px;
-  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 #mainTemperature {
   font-size: 60px;
@@ -46,6 +46,7 @@ h2 {
   margin-top: 100px;
   line-height: 50px;
   text-align: center;
+  font-size: 18px;
 }
 ul {
   list-style: none;
@@ -57,5 +58,10 @@ h3 {
 }
 
 .icon {
-  font-size: 38px;
+  font-size: 62px;
+}
+
+.link {
+  text-align: left;
+  margin-left: 100px;
 }
