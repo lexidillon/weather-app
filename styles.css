@@ -1,5 +1,5 @@
 body {
-  margin: 20px 150px 150px 150px;
+  margin: 5px 150px 150px 150px;
   padding: 50px;
 }
 .container {
@@ -47,6 +47,7 @@ h2 {
   line-height: 50px;
   text-align: center;
   font-size: 18px;
+  margin-top: 110px;
 }
 ul {
   list-style: none;
@@ -64,4 +65,8 @@ h3 {
 .link {
   text-align: left;
   margin-left: 100px;
+}
+
+#current-city {
+  position: relative;
 }
